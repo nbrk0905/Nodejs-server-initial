@@ -42,9 +42,15 @@ const server = http.createServer((req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 3000;
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
 
-server.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
-});
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
 
