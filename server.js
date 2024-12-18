@@ -42,7 +42,8 @@ const server = http.createServer((req, res) => {
 });
 
 // Start server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Use environment PORT or fallback to 3000
 server.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
+
